@@ -1,7 +1,7 @@
 import json
 
 countries_list = []
-with open('countries.json', encoding="utf-8") as datafile:
+with open('countries_temp.json', encoding="utf-8") as datafile:
   json_data = json.load(datafile)
   for item in json_data:
     country_name_dict = item['name']['common']
@@ -28,5 +28,4 @@ def countries_wiki(dicty, out):
       output.write('{} - {}\n'.format(k, v))
 
 if __name__ == '__main__':
-    countries_wiki(countries_url, 'countries_wiki.txt')
-    
+    countries_wiki(countries_url, 'countries_wiki_temp.txt')
